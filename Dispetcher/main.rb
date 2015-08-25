@@ -1,0 +1,8 @@
+require_relative 'railroad_station'
+require_relative 'route'
+require_relative 'train'
+require_relative 'train_cargo'
+require_relative 'train_passanger'
+require_relative 'wagon'
+require_relative 'wagon_cargo'
+require_relative 'wagon_passanger'
