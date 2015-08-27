@@ -11,11 +11,11 @@ class Route
 		puts "#{@route}"
 	end
 
-	def add_station(name_st, num = -2)					#добавить станцию в маршрут 
-		@route.insert(num, name_st)
+	def add_station(route, num = -2)					#добавить станцию в маршрут 
+		@station.insert(num, name_st)
 	end
 
-	def delete_station(name_st)				#удаляем станцию из маршрута
-		@route.delete(name_st)
+	def delete_station(route)				#удаляем станцию из маршрута
+		@station.delete(name_st)
 	end 	
 end

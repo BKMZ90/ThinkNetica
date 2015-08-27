@@ -1,7 +1,5 @@
 class Train
-	attr_reader :type														#тип вагона нам потребуется пожалуй только для чтения
-	attr_accessor :speed
-
+	
 	def initialize(type, wagon)
 		@type = type
 		@wagon = wagon
@@ -14,7 +12,7 @@ class Train
 	end
 
 	def speed_down(speed)												#поезд тормозит
-		@speed -+ speed
+		@speed -= speed if @speed > BEGIN_SPEED
 	end
 
 	def stop																		#остановка поезда
@@ -30,8 +28,8 @@ class Train
 	end
 
 	def add_wagon																#прицепляем вагоны согласно условию (по одному вагону за операцию, метод просто увеличивает количество вагонов). 
-		if @speed == BEGIN_SPEED 									#Прицепка/отцепка вагонов может осуществляться только если поезд не движется.
-			@wagon += 1
+		 if @speed == BEGIN_SPEED									#Прицепка/отцепка вагонов может осуществляться только если поезд не движется.
+			@wagon += 1 
 			else
 				puts "Warning: The train in motion"
 		end
@@ -45,20 +43,33 @@ class Train
 		end
 	end
 
-	def add_route(route)															#Принимать маршрут следования
-		@route = route.name_st
-		
+	def set_route(route_name)															#Принимать маршрут следования
+		@route = route_name.route
 	end
 
+	def delete_route(route_name)															#Принимать маршрут следования
+		@route = []
+	end
+
+	protected
+
+	attr_reader :type														#тип вагона нам потребуется пожалуй только для чтения
+	attr_accessor :speed
+	attr_accessor :route
+
+	#def check_speed 			#закрываем проверку скорости от посторонних глаз
+	#	@speed = BEGIN_SPEED
+	#end
+
+	BEGIN_SPEED = 0
 end
 
 
-BEGIN_SPEED = 0
+
 =begin
 	def itenerary_agree													
+	end					#перемещаться между станциями
+	def itenerary_status			#Показывать предыдущую станцию, текущую, следующую, на основе маршрута
 	end
-																							#перемещаться между станциями
-	def itenerary_status												#Показывать предыдущую станцию, текущую, следующую, на основе маршрута
-	end
-protected 																		#т.к. у этого класса есть подклассы (т.е. мы хотим иметь доступ из подклассов к тому что ниже но не нужно этого видеть из вне)
+	protected 																		#т.к. у этого класса есть подклассы (т.е. мы хотим иметь доступ из подклассов к тому что ниже но не нужно этого видеть из вне)
 =end

@@ -1,4 +1,4 @@
-class RailroadStation
+class RailWayStation
 	
 
 	def initialize#(name_station)
@@ -18,6 +18,7 @@ class RailroadStation
 		puts "All trains: #{@all_trains}"
 	end
 
-	#def all_train_in_Station_type	#Может показывать список поездов на станции по типу (см. ниже): кол-во грузовых, пассажирских
+	
+	#def all_train_in_Station_type			#Может показывать список поездов на станции по типу (см. ниже): кол-во грузовых, пассажирских
 	#end
 end
