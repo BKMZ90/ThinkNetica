@@ -44,8 +44,8 @@ full_product_price = Hash[product_name.zip product_price] 			# 2 задача
 
 puts full_purchase													#1 задача решена
 puts full_product_price												#2 задача решена
-<<<<<<< HEAD
+
 puts "ИТОГО: #{sum_product_price}"									#3 задача решена
-=======
+
 puts "ИТОГО: #{sum_product_price}"									#3 задача решена
->>>>>>> d72db1db2587d82654f6b295c4405e916eb797ef
+
