@@ -1,15 +1,26 @@
 require_relative 'wagon'
+require_relative 'manufacturer'
 
 class Train
+
+	include Manufacturer
+
 	attr_reader :speed
 	attr_reader :type									#тип вагона нам потребуется пожалуй только для чтения
 	
-	def initialize(type)
+	@@train = {}
+
+	def initialize(number, type)
 		@type = type
 		@wagon = []
 		@speed = BEGIN_SPEED
 		@route = []
-	end
+		@@train[number] = self
+ 	end
+
+ 	def self.find(number)
+ 		puts @@train[number]
+ 	end
 
 	def speed_up(speed_up)								#поезд набирает скорость
 		@speed += speed_up

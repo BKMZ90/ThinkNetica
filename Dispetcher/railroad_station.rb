@@ -1,9 +1,16 @@
 class RailWayStation
 	
+	@@all_stations = []
 
-	def initialize#(name_station)
-		#@name_station = name_station
+
+	def self.all
+		puts @@all_stations
+	end	
+
+	def initialize(name_station)
+		@name_station = name_station
 		@all_trains = []
+		@@all_stations << @name_station
 	end
 
 	def add_train(train)					#станция может принимать поезда
